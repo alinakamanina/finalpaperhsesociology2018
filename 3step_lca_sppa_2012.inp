@@ -1,0 +1,25 @@
+title: sppalca
+
+  variable:
+  names = vot f reg sex mtsi educ inc race clm op pl dp bt lmp mm bk ci st;
+  USEVAR = clm op pl dp bt lmp mm bk ci st;
+  categorical = clm op pl dp bt lmp mm bk ci st;
+  missing are all (999);
+  classes = c(3);
+  AUXILIARY = (R3STEP);
+  data:
+  file is lca_sppa_2012.dat;
+  ANALYSIS: TYPE = MIXTURE;
+  MODEL: !no model is needed, LCA is default
+  ! %OVERALL%
+  !vot on c;
+  !vot on educ;
+  !vot on inc;
+
+
+ ! Savedata:
+  !file is sppalca2_save.txt ;
+  !save is cprob;
+  !format is free;
+  !output:
+  !tech11 tech14 tech8;
